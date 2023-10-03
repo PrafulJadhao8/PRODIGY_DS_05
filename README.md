@@ -1,66 +1,13 @@
-import pandas as pd
-import matplotlib.pyplot as plt
-data = pd.read_csv(r'C:\Users\Praful J\Desktop\Prodigy\Task 5\archive (1)\df.csv')
 
-display(data)
+Analyze traffic accident data to identify patterns related to road conditions, weather, and time of day. Visualize accident hotspots and contributing factors.
 
 
-data_sorted = data.sort_values(by="Numbers", ascending=False)
 
-cities = data_sorted["Million Plus Cities"]
-total_cases = data_sorted["Numbers"]
+#Summary.
+The maximum number of accident cases occurred in Jabalpur, while the minimum number of cases occurred in Amritsar, indicating significant variations in accident frequency across different cities.
 
-plt.figure(figsize=(14, 6))  
-plt.bar(cities, total_cases, color='skyblue', width=0.8)  
-plt.xlabel("City")
-plt.ylabel("Total Number of Cases")
-plt.title("Total Cases by City (Descending Order)")
-plt.xticks(rotation=45)  
-plt.tight_layout()
+Among the reported causes, "Road features error" stands out as the leading cause of accidents with the highest number of cases, while "Impacting vehicle" appears to be the cause with the lowest number of cases.
 
-plt.show()
+Within the "Cause Subcategory" analysis, it is noteworthy that the category "Others" has the highest number of accident cases, suggesting a broad category for various unspecified causes. Following that, "Sunny weather," "Straight road," and "Two wheelers" are among the specific causes with a significant number of cases.
 
-data_sorted = data.sort_values(by="Numbers", ascending=False)
-
-cause_categories = data_sorted["Cause category"]
-total_cases = data_sorted["Numbers"]
-
-plt.figure(figsize=(14, 6))  
-bars = plt.bar(cause_categories, total_cases, color='skyblue', width=0.8) 
-plt.xlabel("Cause Category")
-plt.ylabel("Total Number of Cases")
-plt.title("Total Cases by Cause Category (Descending Order)")
-plt.xticks(rotation=45) 
-
-
-plt.show()
-
- 
-data_sorted = data.sort_values(by="Numbers", ascending=False)
-
-cause_subcategories = data_sorted["Cause Subcategory"]
-total_cases = data_sorted["Numbers"]
-
-plt.figure(figsize=(14, 8))  
-plt.barh(cause_subcategories, total_cases, color='skyblue')
-plt.ylabel("Cause Subcategory")
-plt.xlabel("Total Number of Cases")
-plt.title("Total Cases by Cause Subcategory (Descending Order)")
-plt.tight_layout()
-
-plt.show()
-
-data_sorted = data.sort_values(by="Numbers", ascending=False)
-
-outcomes = data_sorted["Outcome of Incident"]
-total_cases = data_sorted["Numbers"]
-
-plt.figure(figsize=(14, 6))  
-plt.bar(outcomes, total_cases, color='skyblue', width=0.8)  
-plt.xlabel("Outcome of Incident")
-plt.ylabel("Total Number of Cases")
-plt.title("Total Cases by Outcome of Incident (Descending Order)")
-plt.xticks(rotation=45)  
-plt.tight_layout()
-
-plt.show()
+An encouraging observation from the data is that there are more instances of injuries reported than fatalities. This indicates that the majority of accidents resulted in injuries, while a smaller number resulted in fatalities, highlighting the importance of safety measures and accident prevention.
